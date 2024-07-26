@@ -1,0 +1,40 @@
+GET http://localhost:6500/cocktails HTTP/1.1
+
+###
+
+GET http://localhost:6500/cocktails/2 HTTP/1.1
+
+###
+
+POST http://localhost:6500/cocktails/ HTTP/1.1
+Content-Type: application/json
+
+{
+  
+  "nom": "Cubanito",
+  "description": "Le Cubanito est souvent décrit comme le Bloody Mary cubain. C'est un cocktail épicé et rafraîchissant, idéal pour ceux qui aiment les saveurs relevées.",
+  "ingredients": [
+    "60 ml de rhum blanc",
+    "90 ml de jus de tomate",
+    "15 ml de jus de citron vert",
+    "Quelques gouttes de sauce Worcestershire",
+    "Quelques gouttes de sauce Tabasco",
+    "Sel et poivre au goût",
+    "Glaçons",
+    "Tranche de citron vert et branche de céleri pour garnir"
+  ],
+  "preparation": "1. Dans un shaker, mélangez le rhum blanc, le jus de tomate, le jus de citron vert, la sauce Worcestershire, la sauce Tabasco, le sel et le poivre.\n2. Ajoutez les glaçons et secouez vigoureusement.\n3. Versez dans un verre à cocktail rempli de glace.\n4. Garnissez d'une tranche de citron vert et d'une branche de céleri.\n5. Dégustez !"
+}
+    
+
+###
+
+PUT http://localhost:6500/cocktails/7 HTTP/1.1
+Content-Type: application/json
+
+{
+   
+  "nom": "Sexe in the beach",
+   "ingredients": ["Rhum", "Menthe", "Sucre", "Citron vert", "Eau gazeuse"]
+}
+  
