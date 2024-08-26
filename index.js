@@ -1,13 +1,17 @@
 // vamos importar express a partir de ese modulo que instalamos pero necesitamos instalar en el paquete json un script con un valor modulo para que me deje usar el import
 import express from "express";
+import cors from "cors";
 
 //este modulo va apermitirme trabajar con fs los archivos que estan en el folder del projet
 import fs from "fs"; //nos ayuda à stocker et gérer les données sur notre syst d explot
 
 import bodyParser from "body-parser"; // mon middelware
 
-// con esto crteo el objeto de mafunction
+//const cors = require("cors"); // Importer le middleware CORS
+
+// con esto crteo el objeto de ma function
 const app = express();
+app.use(cors()); // Utiliser le middleware CORS
 app.use(bodyParser.json()); //voy agregar mon middelware usando el objeto de l'app .use y le pasamos adentro ese (body parse)
 //para leeer los datos
 
@@ -71,7 +75,7 @@ app.put("/cocktails/:id", (req, res) => {
   const DrinkIndex = data.cocktails.findIndex((Drink) => Drink.id === id); //quiero saber el index del cocktail que estoy buscando
 
   data.cocktails[DrinkIndex] = {
-    ...data.cocktails[DrinkIndex], // donde tengo los libros en esa posicion mon index, todos losd atos que tengo aqui los voy a actualisar con los datos del body que estan entrando
+    ...data.cocktails[DrinkIndex], // donde tengo los libros en esa posicion mon index, todos los datos que tengo aqui los voy a actualisar con los datos del body que estan entrando
     ...body, // le trois point  permet de copier, concaténer ou insérer les éléments d'un tableau dans un autre tableau,manipuler les éléments de tableaux et les propriétés d'objets,
   };
   writeData(data); //utiliso esta funcion y le paso les nuevos datos que tengo

@@ -12,8 +12,10 @@
           "6 feuilles de menthe",
           "Eau gazeuse",
           "Glace pilée"
+          
         ],
-        "preparation": "Écrasez délicatement les feuilles de menthe avec le sucre et le jus du citron vert dans un verre. Ajoutez le rhum blanc, remplissez le verre de glace pilée, complétez avec de l'eau gazeuse et remuez doucement. Décorez avec une branche de menthe."
+        "preparation": "Écrasez délicatement les feuilles de menthe avec le sucre et le jus du citron vert dans un verre. Ajoutez le rhum blanc, remplissez le verre de glace pilée, complétez avec de l'eau gazeuse et remuez doucement. Décorez avec une branche de menthe.",
+        "image":"https://pierrotgourmet.fr/wp-content/uploads/2013/03/recette_du_mojito2.jpg"
       },
       {
         "id":2 ,
@@ -24,7 +26,8 @@
           "30 ml de jus de citron vert frais",
           "15 ml de sirop de sucre"
         ],
-        "preparation": "Secouez tous les ingrédients avec de la glace dans un shaker. Filtrez dans un verre à cocktail refroidi."
+        "preparation": "Secouez tous les ingrédients avec de la glace dans un shaker. Filtrez dans un verre à cocktail refroidi.",
+        "image": "https://www.1001cocktails.com/wp-content/uploads/1001cocktails/2023/03/80342_origin-scaled.jpg"
       },
       {
         "id":3,
@@ -36,7 +39,8 @@
           "1 quartier de citron vert",
           "Glace"
         ],
-        "preparation": "Remplissez un verre de glaçons. Ajoutez le rhum et pressez un quartier de citron vert dans le verre. Complétez avec du cola et remuez doucement."
+        "preparation": "Remplissez un verre de glaçons. Ajoutez le rhum et pressez un quartier de citron vert dans le verre. Complétez avec du cola et remuez doucement.",
+        "image":"https://cdn7.kiwilimon.com/recetaimagen/40577/54168.jpg"
       },
       {
         "id":4 ,
@@ -48,7 +52,8 @@
           "30 ml de crème de coco",
           "Glace"
         ],
-        "preparation": "Mixez tous les ingrédients avec de la glace dans un blender jusqu'à obtenir une consistance lisse. Servez dans un grand verre et décorez avec une tranche d'ananas et une cerise."
+        "preparation": "Mixez tous les ingrédients avec de la glace dans un blender jusqu'à obtenir une consistance lisse. Servez dans un grand verre et décorez avec une tranche d'ananas et une cerise.",
+        "image":"https://www.foodfaithfitness.com/wp-content/uploads/2023/07/Pina-Colada-Recipe-Feature_1.jpg"
       },
       {
         "id":5,
@@ -60,7 +65,8 @@
           "40 ml de jus de pamplemousse",
           "15 ml de jus de citron vert"
         ],
-        "preparation": "Secouez tous les ingrédients avec de la glace dans un shaker. Filtrez dans un verre à cocktail refroidi."
+        "preparation": "Secouez tous les ingrédients avec de la glace dans un shaker. Filtrez dans un verre à cocktail refroidi.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/Hemingway_Daiquiri.jpg"
       },
       {
         "id":6 ,
@@ -72,7 +78,8 @@
           "15 ml de curaçao orange",
           "1 cuillère à café de grenadine"
         ],
-        "preparation": "Remuez tous les ingrédients avec de la glace dans un verre à mélange. Filtrez dans un verre à cocktail refroidi et décorez avec un zeste d'orange."
+        "preparation": "Remuez tous les ingrédients avec de la glace dans un verre à mélange. Filtrez dans un verre à cocktail refroidi et décorez avec un zeste d'orange.",
+        "image":"https://www.cocktail-book.de/wp-content/uploads/2016/11/El-Presidente2-1161x1300.jpg"
       }
     ]
   }

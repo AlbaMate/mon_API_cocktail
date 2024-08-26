@@ -1,0 +1,116 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail API</title>
+ 
+</head>
+
+<body>
+<style>
+    /* Pour cibler toutes les images de la page */
+img {
+    
+  width: 100%; /* ou une taille fixe comme 300px */
+  height: 200px; /* ou une taille fixe selon ce que tu préfères */
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px; /* Si tu veux arrondir les bords des images */
+}
+
+
+/* Si tu veux cibler spécifiquement les images de cocktails, tu peux leur donner une classe dans ton JavaScript */
+.cocktail-image {
+    width: 420px; /* Ajuste la largeur selon tes besoins */
+    height: 420px;
+    border-radius: 10px;
+    object-fit:contain;
+}
+
+</style>
+
+    <header>hola</header>
+    <section>holas</section>
+    <h1>hola</h1>
+   
+  <script>
+let header = document.querySelector("header");
+let section = document.querySelector("section");
+
+// URL de l'API
+let requestURL = "http://localhost:6500/cocktails";
+console.log("requestURL:",requestURL)
+// Créer une nouvelle requête XMLHttpRequest
+let request = new XMLHttpRequest(); ///Crée un nouvel objet XMLHttpRequest, utilisé pour envoyer des requêtes HTTP vers des serveurs et récupérer des données.
+console.log("request:",request)
+request.open("GET", requestURL); ////ouvre une nouvelle requête grâce à la méthode open()
+console.log("response:",request.response.cocktails)
+request.responseType = "json"; // Spécifier le type de réponse en JSON
+request.send(); // Envoyer la requête
+
+// Une fois la réponse reçue, traiter les données
+request.onload = function () {
+  let cocktails = request.response; // Accéder à la liste des cocktails dans 
+  console.log("cocktails:", cocktails)
+  populateHeader(cocktails);
+  showCocktails(cocktails);
+};
+
+// Fonction pour peupler le header avec le titre "Cocktails"
+function populateHeader(cocktails) {
+  let myH1 = document.createElement("h1");
+  myH1.textContent = "Voyage au Coeur des Cocktails Cubains";
+  header.appendChild(myH1);
+
+  let myPara = document.createElement("p");
+  myPara.textContent = "Nombre de cocktails: " + cocktails.length;
+  header.appendChild(myPara);
+}
+
+// Fonction pour afficher les cocktails dans la section
+function showCocktails(cocktails) {
+  for (let i = 0; i < cocktails.length; i++) {
+    let myMenu = document.createElement("article");
+    let myH2 = document.createElement("h2");
+    let myPara1 = document.createElement("p");
+    let myPara2 = document.createElement("p");
+    let myPara3 = document.createElement("p");
+    let myList = document.createElement("ul");
+    let myImage = document.createElement("img");
+
+    // Remplir les éléments avec les données du cocktail
+    myH2.textContent = cocktails[i].name;
+    myPara1.textContent = "Description: " + cocktails[i].description;
+    myPara2.textContent = "Préparation: " + cocktails[i].preparation;
+    myImage.src = cocktails[i].image; // Ajouter une image du cocktail
+    myImage.alt = cocktails[i].name; // Ajouter un alt à l'image
+    myImage.classList.add("cocktail-image"); // Ajouter la classe CSS
+
+
+    // Lister les ingrédients du cocktail
+    let ingredients = cocktails[i].ingredients;
+    for (let j = 0; j < ingredients.length; j++) {
+      let listItem = document.createElement("li");
+      listItem.textContent = ingredients[j];
+      myList.appendChild(listItem);
+    }
+
+    myMenu.appendChild(myH2);
+        myMenu.appendChild(myImage); // Ajouter l'image à l'article
+        myMenu.appendChild(myPara1);
+        myMenu.appendChild(myPara2);
+        myMenu.appendChild(myPara3);
+        myMenu.appendChild(myList);
+
+
+    // Ajouter l'article à la section
+    section.appendChild(myMenu);
+  }
+}
+
+
+  </script>
+</body>
+</html>

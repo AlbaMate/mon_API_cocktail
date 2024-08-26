@@ -1,0 +1,23 @@
+/* Styles pour les images de cocktails */
+.cocktail-image {
+    width: 300px; /* Réduit la largeur de l'image */
+    height: auto; /* Ajuste la hauteur automatiquement pour conserver les proportions */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet de profondeur */
+    margin-top: 10px; /* Espace au-dessus de l'image */
+    margin-bottom: 20px; /* Espace en-dessous de l'image */
+}
+
+/* Styles généraux pour les articles */
+article {
+    margin-bottom: 40px; /* Espace entre les articles */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Autres styles pour le texte, les titres, etc. */
+h2 {
+    color: #333;
+}
