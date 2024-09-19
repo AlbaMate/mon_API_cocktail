@@ -1,9 +1,11 @@
 // models/cocktail.mjs
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/connection.js'; 
-//import Cocktail from './models/cocktail.mjs';
+//import Cocktails from './models/cocktails.js';
 
-const Cocktails = sequelize.define('Cocktail', {
+
+
+const Cocktail = sequelize.define('Cocktail', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -39,9 +41,13 @@ const Cocktails = sequelize.define('Cocktail', {
     type: DataTypes.STRING,
     allowNull: true
   },
+  isAlcoholic: {
+    type: DataTypes.BOOLEAN,  // Ajout de la colonne isAlcoholic dans le modèle
+    allowNull: false,
+    defaultValue: true,
 },
-{
+
   timestamps: true
 });
 
-export default Cocktails;
+export default Cocktail;

@@ -6,15 +6,25 @@ import cors from "cors";
 import fs from "fs"; //nos ayuda à stocker et gérer les données sur notre syst d explot
 
 import bodyParser from "body-parser"; // mon middelware
+// import { Op } from "sequelize";
+// import Cocktails from "./models/cocktail"; // Modèle Sequelize
+//  // Modèle Sequelize
 
 //const cors = require("cors"); // Importer le middleware CORS
+//import Cocktails from './models/cocktails.js';
+import searchRoutes from "./searchRoutes.js"; // Import de la nouvelle route
+//const searchRoutes = require('./searchRoutes.cjs');
 
-// con esto crteo el objeto de ma function
+
+// con esto creo el objeto de ma function
 const app = express();
 app.use(cors()); // Utiliser le middleware CORS
+app.use("/search", searchRoutes); // Monte la route de recherche
 app.use(bodyParser.json()); //voy agregar mon middelware usando el objeto de l'app .use y le pasamos adentro ese (body parse)
-//para leeer los datos
 
+
+
+//para leeer los datos
 const readData = () => {
   try {
     const data = fs.readFileSync("./db.json");
@@ -54,6 +64,8 @@ app.get("/cocktails/:id", (req, res) => {
   res.json(drink);
 });
 
+
+
 app.post("/cocktails", (req, res) => {
   const data = readData();
   const body = req.body; // voy extraer el body que ya viene en mi objeto y aqui es donde enviaré los datos de un cocktail que voy a crear new
@@ -75,7 +87,7 @@ app.put("/cocktails/:id", (req, res) => {
   const DrinkIndex = data.cocktails.findIndex((Drink) => Drink.id === id); //quiero saber el index del cocktail que estoy buscando
 
   data.cocktails[DrinkIndex] = {
-    ...data.cocktails[DrinkIndex], // donde tengo los libros en esa posicion mon index, todos los datos que tengo aqui los voy a actualisar con los datos del body que estan entrando
+    ...data.cocktails[DrinkIndex], // donde tengo los cocktails en esa posicion mon index, todos los datos que tengo aqui los voy a actualisar con los datos del body que estan entrando
     ...body, // le trois point  permet de copier, concaténer ou insérer les éléments d'un tableau dans un autre tableau,manipuler les éléments de tableaux et les propriétés d'objets,
   };
   writeData(data); //utiliso esta funcion y le paso les nuevos datos que tengo
