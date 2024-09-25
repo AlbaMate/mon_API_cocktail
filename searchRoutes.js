@@ -5,7 +5,7 @@ import Cocktail from "./models/cocktail.js"; // Modèle Sequelize
 const router = express.Router();
 
 // Route de recherche
-router.get("/search", async (req, res) => {
+router.get("/", async (req, res) => {
   const { q, ingredient, alcoholic } = req.query;
 
   let whereClause = {};
@@ -26,9 +26,13 @@ router.get("/search", async (req, res) => {
   if (alcoholic !== undefined) {
     whereClause.isAlcoholic = alcoholic === "true";
   }
+  // // Vérification du nombre de cocktails trouvés
+  // if (cocktails.length === 0) {
+  //   return res.status(404).json({ message: "Aucun cocktail trouvé" });
+  // }
 
   try {
-    const cocktails = await Cocktails.findAll({
+    const cocktails = await Cocktail.findAll({
       where: whereClause,
     });
     res.json(cocktails);

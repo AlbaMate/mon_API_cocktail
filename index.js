@@ -15,14 +15,11 @@ import bodyParser from "body-parser"; // mon middelware
 import searchRoutes from "./searchRoutes.js"; // Import de la nouvelle route
 //const searchRoutes = require('./searchRoutes.cjs');
 
-
 // con esto creo el objeto de ma function
 const app = express();
 app.use(cors()); // Utiliser le middleware CORS
-app.use("/search", searchRoutes); // Monte la route de recherche
+app.use("/search", searchRoutes); // Monte la route de recherche  (indique que tu montes un ensemble de routes (appelées searchRoutes) sur l'URL "/search". Cela signifie que tout ce qui est défini dans searchRoutes sera accessible avec l'URL de base /search.)
 app.use(bodyParser.json()); //voy agregar mon middelware usando el objeto de l'app .use y le pasamos adentro ese (body parse)
-
-
 
 //para leeer los datos
 const readData = () => {
@@ -63,8 +60,6 @@ app.get("/cocktails/:id", (req, res) => {
   const drink = data.cocktails.find((drink) => drink.id === id);
   res.json(drink);
 });
-
-
 
 app.post("/cocktails", (req, res) => {
   const data = readData();

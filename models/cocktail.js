@@ -46,8 +46,6 @@ const Cocktail = sequelize.define('Cocktail', {
     allowNull: false,
     defaultValue: true,
 },
-
-  timestamps: true
 });
 
 export default Cocktail;
